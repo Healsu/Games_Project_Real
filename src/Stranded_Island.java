@@ -1,6 +1,7 @@
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
+
 public class Stranded_Island {
     public static void main(String[] args) {
         //De forskellige muligheder for spilleren at vælge imellem
@@ -17,20 +18,21 @@ public class Stranded_Island {
 
         //Vi giver alt informationen vi har fået i vores main videre til vores næste method som få disse informationer som nye parameter
         //Selvom de har det samme navn (orker ikke at give dem nye navne)
-        result(options,allInputsCombined);
+        result(options, allInputsCombined);
     }
 
-    public static void result (String options[], int allInputsCombined[]){
+    public static void result(String options[], int allInputsCombined[]) {
 
         //Vi laver et forloop for de 10 gange spilleren skal vælge en genstand de gerne vil have
+        System.out.println("We will now ask 10 diffrent people for what they would like with them on this island");
         for (int i = 0; i < allInputsCombined.length; i++) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("What item number would you like? ");
-            int playerChoice = scanner.nextInt()-1;
-            allInputsCombined[playerChoice]+=1;
-           }
+            int playerChoice = scanner.nextInt() - 1;
+            allInputsCombined[playerChoice] += 1;
+        }
         //Vi printer listen ud af hvor mange gange hver genstand var blevet valgt
-        for (int j = 0; j < allInputsCombined.length; j++){
+        for (int j = 0; j < allInputsCombined.length; j++) {
             System.out.println(allInputsCombined[j]);
         }
 
@@ -38,7 +40,7 @@ public class Stranded_Island {
         int maximum = allInputsCombined[0];
         int maximumIndex = 0;
 
-        for (int i=1; i<allInputsCombined.length; i++) {
+        for (int i = 1; i < allInputsCombined.length; i++) {
             if (allInputsCombined[i] > maximum) {
                 //Som vi også gjorde før giver vi indexet for hele arrayet et nyt navn
                 maximum = allInputsCombined[i];
@@ -51,8 +53,8 @@ public class Stranded_Island {
 
         }
         //vi slutter så af med at printe ud hvilke index blev valgt mest, og hvor mange gange det blev valgt
-        System.out.println("The biggest choice is number "+(maximumIndex+1)+" and it was chosen "+maximum+" times");
-        }
+        System.out.println("The biggest choice is number " + (maximumIndex + 1) + " and it was chosen " + maximum + " times");
     }
+}
 
 
